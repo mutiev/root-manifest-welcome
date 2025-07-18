@@ -5,7 +5,7 @@ Execute to add this cheatsheet to splash screen:
 echo 'cat ./root-manifest-welcome/memo.md' >> ~/.bashrc
 ```
 
-Note: Testing post commit hook to copy memo.md to README.md and stage it for commit....
+Note: Testing post commit hook to copy memo.md to README.md and stage it for commit;
 Note: To update this file `cd ~/root-manifest-welcome/ && git pull && cd -`
 
 
