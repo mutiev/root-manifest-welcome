@@ -1,5 +1,10 @@
 ###### me@midi:~$ cat memo.md
 
+Execute to add this cheatsheet to splash screen:
+```bash
+echo 'cat ./root-manifest-welcome/memo.md' >> ~/.bashrc
+```
+
 Note: Testing post commit hook to copy memo.md to README.md and stage it for commit....
 Note: To update this file `cd ~/root-manifest-welcome/ && git pull && cd -`
 
@@ -32,11 +37,11 @@ dpkg-reconfigure locales
 - Unarchive to specified path `tar xzf archive.tar.gz -C .`
 
 ## Privilegies Status
-visudo -- use to offer sudo commands to users
-sudo cat /etc/sudoers -- show members of sudo group
-getent group sudo - show the members of group sudo
-getnet group wheel - show the members of group wheel
-cat /etc/group | grep sudo - show the members of group sudo
+- `visudo` -- use to offer sudo commands to users
+- `sudo cat /etc/sudoers` -- show members of sudo group
+- `getent group sudo` -- show the members of group sudo
+- `getnet group wheel` - show the members of group wheel
+- `cat /etc/group | grep sudo` - show the members of group sudo
 
 
 ## User Management
@@ -68,23 +73,23 @@ By default Debian have systemd by default system init.
 update-rc.d is from another system init called `System V`
 `service`, `update-rc.d` is a legacy systems so consider focus on `systemctl`
 
-systemctl start <service_name>: Starts a specific service.
-systemctl stop <service_name>: Stops a running service.
-systemctl restart <service_name>: Restarts a service.
-systemctl status <service_name>: Displays the status of a service.
-systemctl enable <service_name>: Enables a service to start on boot.
-systemctl disable <service_name>: Disables a service from starting on boot.
-systemctl mask <service_name>: Masks a service, preventing it from being started, even if another service requires it.
-systemctl reboot: Reboots the system.
-systemctl poweroff: Shuts down the system.
-systemctl list-units: Lists all active units. (--type=service to filter by startup services)
-systemctl list-unit-files: Lists all unit files.
+`systemctl start <service_name>`: Starts a specific service.
+`systemctl stop <service_name>`: Stops a running service.
+`systemctl restart <service_name>`: Restarts a service.
+`systemctl status <service_name>`: Displays the status of a service.
+`systemctl enable <service_name>`: Enables a service to start on boot.
+`systemctl disable <service_name>`: Disables a service from starting on boot.
+`systemctl mask <service_name>`: Masks a service, preventing it from being started, even if another service requires it.
+`systemctl reboot`: Reboots the system.
+`systemctl poweroff`: Shuts down the system.
+`systemctl list-units`: Lists all active units. (--type=service to filter by startup services)
+`systemctl list-unit-files`: Lists all unit files.
 
 
 ### LOGS
-sudo journalctl -u ssh
-sudo tail -f /var/log/auth.log
-sudo journalctl --system --follow -u ssh.service
+- `sudo journalctl -u ssh`
+- `sudo tail -f /var/log/auth.log`
+- `sudo journalctl --system --follow -u ssh.service`
 
 
 ### Login
