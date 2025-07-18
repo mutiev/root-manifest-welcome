@@ -43,3 +43,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Commit and push README.md.action
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md.action
+          git commit -m "Auto: update README.md.action from memo.md"
+          git push
+          env:
+          # Не забудь указать токен!  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
