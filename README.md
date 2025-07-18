@@ -28,7 +28,7 @@ wifi.powersave = 2
 # Hello Midi Root
 
 ## Locale Management
-dpkg-reconfigure locales
+- `dpkg-reconfigure locales`
 
 ## TAR Archiver
 - Make archive: `tar czf /home/landing/hls.tar.gz -C /var/www/html hls`
@@ -45,27 +45,26 @@ dpkg-reconfigure locales
 
 
 ## User Management
-sudo adduser newuser - create new user
+- `sudo adduser newuser` -- create new user
 
 
 ### Add to sudoers
-sudo usermod -a -G sudo <username> -- recommended way to add to sudoers
-sudo adduser newuser sudo -- add to sudoers
-sudo usermod newuser -a -G pi,adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,spi,i2c,gpio -- add the newuser to the same groups as the "pi" user
-export EDITOR="vim" sudo visudo -- add to end of the file "<username> ALL=(ALL) ALL"
-echo ' username ALL=(ALL)   ALL' >> /etc/sudoers -- on CentOS as root
-
-sudo sh -c "echo 'username ALL=NOPASSWD: ALL' >> /etc/sudoers" -- grants root access to username without explicitly logging in as root
+- `sudo usermod -a -G sudo <username>` -- recommended way to add to sudoers
+- `sudo adduser newuser sudo` -- add to sudoers
+- `sudo usermod newuser -a -G pi,adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,spi,i2c,gpio` -- add the newuser to the same groups as the - "pi" user
+- `export EDITOR="vim" sudo visudo` -- add to end of the file "<username> ALL=(ALL) ALL"
+- `echo ' username ALL=(ALL)   ALL' >> /etc/sudoers` -- on CentOS as root
+- `sudo sh -c "echo 'username ALL=NOPASSWD: ALL' >> /etc/sudoers"` -- grants root access to username without explicitly logging in as root
 
 
 ### Revoke sudo
-sudo deluser new sudo - remove username froum group sudo
-sudo gpasswd -d usernae sudo - remove username from group sudo
+- `sudo deluser new sudo` -- remove username from group sudo
+- `sudo gpasswd -d username sudo` -- remove username from group sudo
 
 
 ### Apps with Open Network Access
-ss -tunlp | grep 1880 -- какие приложения юзают порт
-sudo netstat -tunlp -- смотрим какие порты какие приложения юзают на открытие
+- `ss -tunlp | grep 1880` -- какие приложения юзают порт
+- `sudo netstat -tunlp` -- смотрим какие порты какие приложения юзают на открытие
 
 
 ### Service Management
@@ -73,17 +72,17 @@ By default Debian have systemd by default system init.
 update-rc.d is from another system init called `System V`
 `service`, `update-rc.d` is a legacy systems so consider focus on `systemctl`
 
-`systemctl start <service_name>`: Starts a specific service.
-`systemctl stop <service_name>`: Stops a running service.
-`systemctl restart <service_name>`: Restarts a service.
-`systemctl status <service_name>`: Displays the status of a service.
-`systemctl enable <service_name>`: Enables a service to start on boot.
-`systemctl disable <service_name>`: Disables a service from starting on boot.
-`systemctl mask <service_name>`: Masks a service, preventing it from being started, even if another service requires it.
-`systemctl reboot`: Reboots the system.
-`systemctl poweroff`: Shuts down the system.
-`systemctl list-units`: Lists all active units. (--type=service to filter by startup services)
-`systemctl list-unit-files`: Lists all unit files.
+- `systemctl start <service_name>`: Starts a specific service.
+- `systemctl stop <service_name>`: Stops a running service.
+- `systemctl restart <service_name>`: Restarts a service.
+- `systemctl status <service_name>`: Displays the status of a service.
+- `systemctl enable <service_name>`: Enables a service to start on boot.
+- `systemctl disable <service_name>`: Disables a service from starting on boot.
+- `systemctl mask <service_name>`: Masks a service, preventing it from being started, even if another service requires it.
+- `systemctl reboot`: Reboots the system.
+- `systemctl poweroff`: Shuts down the system.
+- `systemctl list-units`: Lists all active units. (--type=service to filter by startup services)
+- `systemctl list-unit-files`: Lists all unit files.
 
 
 ### LOGS
@@ -93,26 +92,26 @@ update-rc.d is from another system init called `System V`
 
 
 ### Login
-sudo -iu <username>  # start a login shell with sudo logging with interactive mode for a specific user
-sudo -iu nodered    # -c "ls -la"
-su - <username>     # legacy way? not recommended
+- `sudo -iu <username>`  # start a login shell with sudo logging with interactive mode for a specific user
+- `sudo -iu nodered`    # -c "ls -la"
+- `su - <username>`     # legacy way? not recommended
 
 ### GITHUB
-ssh-keygen -t ed<tab>
-eval "$(ssh-agent -s)"
-ssh-add <key_to_path_not_pub>
+- `ssh-keygen -t ed<tab>`
+- `eval "$(ssh-agent -s)"`
+- `ssh-add <key_to_path_not_pub>`
 **Warning**
 - Use deploy keys for read-only (set write access via github repository settings) access to specific repositories! Make moar keys!!!11
 
 
 ### NGINX
-nginx -t -c /etc/nginx/nginx.conf  # to check config file ok? (-c is optional, nginx.conf by default)
-tail -f /var/log/nginx/error.log   # to see log
-nano /etc/nginx/nginx.conf         # edit
+- `nginx -t -c /etc/nginx/nginx.conf` -- to check config file ok? (-c is optional, nginx.conf by default)
+- `tail -f /var/log/nginx/error.log`   # to see log
+- `nano /etc/nginx/nginx.conf`         # edit
 
 
 ### Multitail
-multitail -f -n 2 cron.log auth.log nginx/access.log
+`multitail -f -n 2 cron.log auth.log nginx/access.log`
 
 ### MAINTENANCE
 Do not forget to git push after changes in this memo.md file.
