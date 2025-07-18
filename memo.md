@@ -1,6 +1,6 @@
 ###### me@midi:~$ cat memo.md
 
-Note: Testing post commit hook to copy memo.md to README.md and stage it for commit..
+Note: Testing post commit hook to copy memo.md to README.md and stage it for commit...
 Note: To update this file `cd ~/root-manifest-welcome/ && git pull && cd -`
 
 
