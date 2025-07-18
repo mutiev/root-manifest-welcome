@@ -95,6 +95,8 @@ su - <username>     # legacy way? not recommended
 ssh-keygen -t ed<tab>
 eval "$(ssh-agent -s)"
 ssh-add <key_to_path_not_pub>
+**Warning**
+- Use deploy keys for read-only (set write access via github repository settings) access to specific repositories! Make moar keys!!!11
 
 
 ### NGINX
