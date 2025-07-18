@@ -105,3 +105,6 @@ nano /etc/nginx/nginx.conf         # edit
 
 ### Multitail
 multitail -f -n 2 cron.log auth.log nginx/access.log
+
+### MAINTENANCE
+Do not forget to git push after changes in this memo.md file.
