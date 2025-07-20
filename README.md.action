@@ -83,7 +83,7 @@ update-rc.d is from another system init called `System V`
 - `systemctl poweroff`: Shuts down the system.
 - `systemctl list-units`: Lists all active units. (--type=service to filter by startup services)
 - `systemctl list-unit-files`: Lists all unit files.
-
+- `systemctl set-default multi-user.target`: Run system only to console, `graphical.target` to GUI
 
 ### LOGS
 - `sudo journalctl -u ssh`
