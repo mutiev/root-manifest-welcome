@@ -96,6 +96,23 @@ update-rc.d is from another system init called `System V`
 - `sudo -iu nodered`    # -c "ls -la"
 - `su - <username>`     # legacy way? not recommended
 
+### DIFF 
+- `diff -ruN myproject myproject-copy`      # for example to compare two .git directories of different projects :)
+
+
+### GIT
+- `git log` - show commits for current branch
+- `
+- `git checkout <commit SHA>`       # switch to `DETACHED HEAD` mode
+- `git checkout -b <into_new_branch_name>`      # creates new branch off of the current branch
+- `git checkout -`      # switch to last previous branch (like cyclic single alt+tab switches between two windows)
+- `git reset --soft HEAD~1`     # rollback to previous HEAD and put commited data to commit
+- `git show <short-hash>`       # show omni information depends of it type (commits, tags, blobs, trees)
+- `git diff HEAD~1 HEAD -- <file>`      # 
+- `git reset --soft HEAD@{2}       # Move the HEAD, and just the HEAD, two commits back!
+- `git reflog`                  # reverts `git reset --hard` 
+
+
 ### GITHUB
 - `ssh-keygen -t ed<tab>`
 - `eval "$(ssh-agent -s)"`
