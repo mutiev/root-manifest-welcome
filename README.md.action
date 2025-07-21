@@ -136,11 +136,55 @@ Use deploy keys for read-only (set write access via github repository settings) 
 - `NGINX location directive syntax` -- google it for more information about conf syntax
 
 
+### SHELL SCRIPT
+if [ -z "$VARIABLE" ]; then # or /
+    echo "<expression>"
+else
+    echo "<another expression>"
+
 ### Multitail
 `multitail -f -n 2 cron.log /var/log/auth.log /var/log/nginx/access.log`
 
+
+### Самые ходовые проверки в shell-скриптах
+
+** Проверка строк **
+- `[ -z "$VAR" ]` — строка пуста (zero length).
+- `[ -n "$VAR" ]` — строка не пуста.
+- `[ "$A" = "$B" ]` — строки равны.
+- `[ "$A" != "$B" ]` — строки не равны.
+
+** Проверка чисел **
+- `[ "$A" -eq "$B" ]` — равно.
+- `[ "$A" -ne "$B" ]` — не равно.
+- `[ "$A" -gt "$B" ]` — больше.
+- `[ "$A" -lt "$B" ]` — меньше.
+
+** Проверка файлов **
+- `[ -f "$FILE" ]` — существует обычный файл.
+- `[ -d "$DIR" ]` — существует каталог.
+- `[ -L "$FILE" ]` — символическая ссылка.
+- `[ -e "$FILE" ]` — существует любой файл или ссылка.
+- `[ -s "$FILE" ]` — файл существует и не пустой.
+- `[ -r "$FILE" ]` — файл доступен на чтение.
+- `[ -w "$FILE" ]` — файл доступен на запись.
+- `[ -x "$FILE" ]` — файл исполняемый.
+
+** Проверка переменных среды **:
+- То же самое: `[ -z "$ENVVAR" ]` — пустая переменная среды (или не определена).
+- `[ "$ENVVAR" = "somevalue" ]` — сравнение значения переменной среды.
+
+** Проверка софта (существует ли команда) **
+
+Обычно в конструкции:
+```bash
+if command -v git >/dev/null 2>&1; then
+    echo "git is installed"
+fi```
+
+
 ### MAINTENANCE
-Do not forget to git push after changes in this memo.md file.
+Do not forgot to git push after changes in this memo.md file.
 
 ***
 
