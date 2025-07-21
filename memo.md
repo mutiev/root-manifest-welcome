@@ -108,10 +108,10 @@ update-rc.d is from another system init called `System V`
 - `nginx -t -c /etc/nginx/nginx.conf` -- to check config file ok? (-c is optional, nginx.conf by default)
 - `tail -f /var/log/nginx/error.log`   # to see log
 - `nano /etc/nginx/nginx.conf`         # edit
-
+- logs in `/var/log/nginx/acces.log`
 
 ### Multitail
-`multitail -f -n 2 cron.log auth.log nginx/access.log`
+`multitail -f -n 2 cron.log /var/log/auth.log /var/log/nginx/access.log`
 
 ### MAINTENANCE
 Do not forget to git push after changes in this memo.md file.
