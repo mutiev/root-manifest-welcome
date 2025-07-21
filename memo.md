@@ -133,6 +133,9 @@ Use deploy keys for read-only (set write access via github repository settings) 
 - `nano /etc/nginx/nginx.conf`         # edit
 - logs in `/var/log/nginx/acces.log`
 
+- `NGINX location directive syntax` -- google it for more information about conf syntax
+
+
 ### Multitail
 `multitail -f -n 2 cron.log /var/log/auth.log /var/log/nginx/access.log`
 
