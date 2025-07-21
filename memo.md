@@ -124,6 +124,10 @@ Use deploy keys for read-only (set write access via github repository settings) 
 
 
 ### NGINX
+- `cd /etc/nginx/sites-enables/ && ln -s ../sites-available/my-very-own.conf .`     # create soft-link
+- `nginx -t`    # check everything in configs 
+
+
 - `nginx -t -c /etc/nginx/nginx.conf` -- to check config file ok? (-c is optional, nginx.conf by default)
 - `tail -f /var/log/nginx/error.log`   # to see log
 - `nano /etc/nginx/nginx.conf`         # edit
